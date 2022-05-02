@@ -1,0 +1,9 @@
+project: rnshah9/mayhem-fe
+target: fe
+image: ghcr.io/rnshah9/mayhem-fe
+
+cmds:
+  - cmd: ./fe @@
+    timeout: 30
+  - cmd: ./fe --optimize false @@
+    timeout: 30
