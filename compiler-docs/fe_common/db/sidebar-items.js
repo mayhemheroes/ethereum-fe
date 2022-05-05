@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["FileContentQuery",""],["FileLineStartsQuery",""],["FileNameQuery",""],["InternFileLookupQuery",""],["InternFileQuery",""],["SourceDbGroupStorage__",""],["SourceDbStorage","Representative struct for the query group."],["TestDb",""]],"trait":[["SourceDb",""],["Upcast",""],["UpcastMut",""]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["compile_ingot","Compiles the main module of a project."],["compile_single_file",""],["dump_mir_single_file","Returns graphviz string."]],"struct":[["CompileError",""],["CompiledContract","The artifacts of a compiled contract."],["CompiledModule","The artifacts of a compiled module."],["Db",""],["NewDb",""]]});

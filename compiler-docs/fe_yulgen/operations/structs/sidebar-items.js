@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["copy_to_storage",""],["get_attribute",""],["init",""]]});

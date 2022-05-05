@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Type",""]],"struct":[["ArrayDef","A static array type definition."],["EventDef","A user defined struct type definition."],["MapDef","A map type definition."],["StructDef","A user defined struct type definition."],["TupleDef","A tuple type definition."],["TypeId","An interned Id for [`ArrayDef`]."]]});
