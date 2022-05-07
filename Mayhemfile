@@ -1,6 +1,5 @@
 project: rnshah9/mayhem-fe
 target: fe
-image: ghcr.io/rnshah9/mayhem-fe
 
 cmds:
   - cmd: ./fe @@
