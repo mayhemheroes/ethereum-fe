@@ -10,8 +10,3 @@ WORKDIR /mayhem-fe
 RUN  ~/.cargo/bin/cargo build --verbose --features solc-backend; exit 0
 RUN echo 3479fd502d44de22 > /root/.cargo/git/checkouts/solc-rust-3479fd502d44de22/52d4146/solidity/commit_hash.txt
 RUN  ~/.cargo/bin/cargo build --verbose --features solc-backend
-
-FROM --platform=linux/amd64 ubuntu:20.04
-
-COPY --from=builder /mayhem-fe/target/debug/fe /
-
