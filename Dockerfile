@@ -1,5 +1,4 @@
-FROM --platform=linux/amd64 ubuntu:20.04 as builder
-SHELL ["/bin/bash", "-c"]
+FROM --platform=linux/amd64 ubuntu:20.04
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y curl cmake libboost-all-dev clang
 
