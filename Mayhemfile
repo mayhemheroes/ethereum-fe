@@ -2,7 +2,7 @@ project: rnshah9/mayhem-fe
 target: fe
 
 cmds:
-  - cmd: ./fe @@
+  - cmd: /mayhem-fe/target/debug/fe @@
     timeout: 30
-  - cmd: ./fe --optimize false @@
+  - cmd: /mayhem-fe/target/debug/fe --optimize false @@
     timeout: 30
