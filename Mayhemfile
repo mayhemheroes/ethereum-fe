@@ -4,5 +4,3 @@ target: fe
 cmds:
   - cmd: /mayhem-fe/target/debug/fe @@
     timeout: 30
-  - cmd: /mayhem-fe/target/debug/fe --optimize false @@
-    timeout: 30
