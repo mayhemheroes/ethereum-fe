@@ -14,7 +14,7 @@ RUN  ~/.cargo/bin/cargo build --verbose --features solc-backend
 RUN mkdir -p /deps
 RUN ldd /mayhem-fe/target/debug/fe | tr -s '[:blank:]' '\n' | grep '^/' | xargs -I % sh -c 'cp % /deps;'
 
-FROM ubuntu:22.04 as package
+FROM ubuntu:20.04 as package
 
 COPY --from=builder /deps /deps
 COPY --from=builder /mayhem-fe/target/debug/fe /mayhem-fe/target/debug/fe
