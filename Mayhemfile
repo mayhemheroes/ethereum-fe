@@ -1,0 +1,6 @@
+project: fe
+target: fe
+
+cmds:
+  - cmd: /mayhem-fe/target/debug/fe @@
+    timeout: 30
