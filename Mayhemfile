@@ -2,5 +2,5 @@ project: fe
 target: fe
 
 cmds:
-  - cmd: /mayhem-fe/target/debug/fe @@
+  - cmd: /mayhem-fe/target/release/fe @@
     timeout: 30

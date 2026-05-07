@@ -1,21 +1,19 @@
-FROM --platform=linux/amd64 ubuntu:20.04 as builder
-RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y curl cmake libboost-all-dev clang
+FROM --platform=linux/amd64 rustlang/rust:nightly AS builder
 
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y cmake libboost-all-dev clang && \
+    rm -rf /var/lib/apt/lists/*
 
 ADD . /mayhem-fe
 WORKDIR /mayhem-fe
 
-RUN  ~/.cargo/bin/cargo build --verbose --features solc-backend; exit 0
-RUN echo 3479fd502d44de22 > /root/.cargo/git/checkouts/solc-rust-3479fd502d44de22/52d4146/solidity/commit_hash.txt
-RUN  ~/.cargo/bin/cargo build --verbose --features solc-backend
+RUN cargo build --release
 
-RUN mkdir -p /deps
-RUN ldd /mayhem-fe/target/debug/fe | tr -s '[:blank:]' '\n' | grep '^/' | xargs -I % sh -c 'cp % /deps;'
+RUN mkdir -p /deps && \
+    ldd /mayhem-fe/target/release/fe | tr -s '[:blank:]' '\n' | grep '^/' | xargs -I % sh -c 'cp % /deps;'
 
-FROM ubuntu:20.04 as package
+FROM debian:trixie-slim AS package
 
 COPY --from=builder /deps /deps
-COPY --from=builder /mayhem-fe/target/debug/fe /mayhem-fe/target/debug/fe
+COPY --from=builder /mayhem-fe/target/release/fe /mayhem-fe/target/release/fe
 ENV LD_LIBRARY_PATH=/deps
